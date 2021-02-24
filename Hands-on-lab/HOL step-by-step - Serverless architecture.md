@@ -45,7 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/legal/intellec
     - [Task 1: Create a system-assigned managed identity for your Function App to connect to Key Vault](#task-1-create-a-system-assigned-managed-identity-for-your-function-app-to-connect-to-key-vault)
     - [Task 2: Configure application settings](#task-2-configure-application-settings)
     - [Task 3: Add Function App to Key Vault access policy](#task-3-add-function-app-to-key-vault-access-policy)
-    - [Task 4: Finish the ProcessImage function](#task-4-finish-the-processimage-function)
+    - [Task 4: Finish the ProcessImage Azure Function](#task-4-finish-the-processimage-azure-function)
     - [Task 5: Deploy the Function App using GitHub Actions](#task-5-deploy-the-function-app-using-github-actions)
   - [Exercise 3: Create functions in the portal](#exercise-3-create-functions-in-the-portal)
     - [Help references](#help-references-2)
@@ -648,7 +648,7 @@ When you cloned this repository you also cloned the necessary GitHub Actions cod
 
     ![On GitHub, showing how to set Repository Secrets using Settings.](media/actions-github-secret.png 'Setting a GitHub repository secret')
 
-4. Open the `main.yml` file from the '.guthub\workflows' folder using Visual Studio Code and change the placeholder **YOURFUNCTIONAPPNAME** with the actual name of your Azure Function Apps
+4. Open the `main.yml` file from the '.github\workflows' folder using Visual Studio Code and change the placeholder **YOURFUNCTIONAPPNAME** with the actual name of your Azure Function Apps
 
 5. In Visual Studio Code, click on the Git Extension in the left navigation and you should see a series of Changes listed. Enter an appropriate Message and hit Ctrl+Enter to commit them (on Mac Command+Enter).
 
