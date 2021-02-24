@@ -636,7 +636,7 @@ The first set of TODO items we will address are in the ProcessImage function, th
 
 In this task, you will configure GitHub Actions so that committing code will push the updates automatically to your Function in Azure.
 
-When you cloned this repository you also cloned the necessary GitHub Actions code required to deploy. You will need to update a few items and enable the Action prior to its first use.
+When you forkd this repository you also forked the necessary GitHub Actions code required to deploy. You will need to update a few items and enable the Action prior to its first use.
 
 1. Navigate to your Function App in the Azure Portal and from the top navigation select **Get publish profile**. A text file will download to your computer.
 
@@ -644,7 +644,7 @@ When you cloned this repository you also cloned the necessary GitHub Actions cod
 
 2. Open the downloaded file in Visual Studio Code, select all the text and copy it.
 
-3. Using Microsoft Edge, open GitHub and navigate to the **Secrets** section of **Settings** for the repository you cloned and create a new Secret called **AZURE_FUNCTIONAPP_PUBLISH_PROFILE**, pasting in the entire contents of the file from step 2.
+3. Using Microsoft Edge, open GitHub and navigate to the **Secrets** section of **Settings** for the repository you forked and create a new Secret called **AZURE_FUNCTIONAPP_PUBLISH_PROFILE**, pasting in the entire contents of the file from step 2.
 
     ![On GitHub, showing how to set Repository Secrets using Settings.](media/actions-github-secret.png 'Setting a GitHub repository secret')
 
