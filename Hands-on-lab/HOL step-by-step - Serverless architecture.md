@@ -47,7 +47,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/legal/intellec
     - [Task 3: Add Function App to Key Vault access policy](#task-3-add-function-app-to-key-vault-access-policy)
     - [Task 4: Finish the ProcessImage Azure Function](#task-4-finish-the-processimage-azure-function)
     - [Task 5: Deploy the Function App using GitHub Actions](#task-5-deploy-the-function-app-using-github-actions)
-  - [Exercise 3: Create functions in the portal](#exercise-3-create-functions-in-the-portal)
+  - [Exercise 3: Create functions in the Azure Portal](#exercise-3-create-functions-in-the-azure-portal)
     - [Help references](#help-references-2)
     - [Task 1: Create function to save license plate data to Azure Cosmos DB](#task-1-create-function-to-save-license-plate-data-to-azure-cosmos-db)
     - [Task 2: Add an Event Grid subscription to the SavePlateData function](#task-2-add-an-event-grid-subscription-to-the-saveplatedata-function)
@@ -509,6 +509,7 @@ The starter project, TollBooth, contains most of the code needed. You will add i
 | **Description**                       |                               **Links**                                |
 | Code and test Azure Functions locally | https://docs.microsoft.com/azure/azure-functions/functions-run-local |
 | What are managed identities for Azure resources? | https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview |
+| Learn GitHub Actions                  | https://docs.github.com/en/actions/learn-github-actions |
 
 ### Task 1: Create a system-assigned managed identity for your Function App to connect to Key Vault
 
@@ -589,7 +590,7 @@ There are a few components within the starter project that must be completed, ma
 
 The first set of TODO items we will address are in the ProcessImage function, the FindLicensePlateText class that calls the Computer Vision API, and finally the SendToEventGrid.cs class, which is responsible for sending processing results to the Event Grid topic you created earlier.
 
-> **Note:** If using Windows ensure you cloned to a folder with a short path `C:\work\` for example. Longer paths, such as  `C:\Users\workshop\Downloads\`, mean you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.`
+> **Note:** If using Windows ensure you cloned to a folder with a short path such as `C:\work\` for example. Longer paths, such as `C:\Users\workshop\Downloads\`, mean you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.`
 
 1. In Visual Studio Code select **Open Folder...** and navigate to the **TollBooth** folder (`hands-on-lab\starter\TollBooth\TollBooth\`) and then choose **Select Folder**.
 
@@ -636,7 +637,7 @@ The first set of TODO items we will address are in the ProcessImage function, th
 
 In this task, you will configure GitHub Actions so that committing code will push the updates automatically to your Function in Azure.
 
-When you forkd this repository you also forked the necessary GitHub Actions code required to deploy. You will need to update a few items and enable the Action prior to its first use.
+When you forked this repository you also forked the necessary GitHub Actions code required to build and deploy the Function App. You will need to update a few items in the Actions YAML file and enable the Action prior to its first use.
 
 1. Navigate to your Function App in the Azure Portal and from the top navigation select **Get publish profile**. A text file will download to your computer.
 
@@ -690,7 +691,7 @@ When you forkd this repository you also forked the necessary GitHub Actions code
 
     ![In the Create event subscription form, the fields are set to the previously defined values.](media/processimage-eg-sub.png)
 
-## Exercise 3: Create functions in the portal
+## Exercise 3: Create functions in the Azure Portal
 
 **Duration**: 45 minutes
 
@@ -932,7 +933,7 @@ dotnet build
 dotnet run "DefaultEndpointsProtocol=https;AccountName={YOURACCOUNT};AccountKey={YOURACCOUNTKEY};EndpointSuffix=core.windows.net"
 ```
 
->**Note:** On Windows, if the files are located under a longer root path, such as `C:\Users\workshop\Downloads\`, then you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.`
+>**Note:** On Windows, if the files are located under a longer root path, such as `C:\Users\workshop\Downloads\`, then you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.` You should move your files to a shorter folder such as `c:\work\`.
 
 8. When prompted, enter **1** and press **ENTER**. This uploads a handful of car photos to the images container of your Blob storage account.
 
